@@ -60,7 +60,7 @@ tape('Parser parses signals with event-driven updates', function(test) {
           {source: 'window', type: 'touchstart'},
           {signal: 'a'}
         ],
-        update: {expr: '2*2'},
+        update: {expr: '2 * 2'},
         force: false
       }
     ]
@@ -99,13 +99,13 @@ tape('Parser parses signals with event-driven updates', function(test) {
   update = scope.updates[1];
   test.equal(update.source, a);
   test.equal(update.target, c);
-  test.equal(update.update.$expr, 'var datum=event.item&&event.item.datum;return((2*2));');
+  test.equal(update.update.$expr, 'var datum=event.item&&event.item.datum;return((2 * 2));');
   test.equal(update.options, undefined);
 
   update = scope.updates[2];
   test.equal(update.source, 5);
   test.equal(update.target, c);
-  test.equal(update.update.$expr, 'var datum=event.item&&event.item.datum;return((2*2));');
+  test.equal(update.update.$expr, 'var datum=event.item&&event.item.datum;return((2 * 2));');
   test.equal(update.options, undefined);
 
   update = scope.updates[3];
